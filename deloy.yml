@@ -16,16 +16,17 @@ jobs:
       - name: Deploy to Somee (FTP)
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          # Các tham số bạn yêu cầu
-          protocol: ftp              # Somee chỉ hỗ trợ FTP
+
+          protocol: ftp
           port: 21
           log-level: standard
-          timeout: 300000            # 5 minutes
-          # Upload tất cả từ repo
+          timeout: 180000
+
           local-dir: "./"
-          # Thư mục web đúng của bạn:
+
           server-dir: "/www.TestFile.somee.com/"
+
           dangerous-clean-slate: false
