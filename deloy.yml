@@ -31,7 +31,7 @@ jobs:
           local-dir: "./"
 
           # Thư mục web public trên Somee
-          server-dir: "/wwwroot/"
+          server-dir: "/www.TestFile.somee.com/"
 
           # Không xóa sạch server
           dangerous-clean-slate: false
