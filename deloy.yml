@@ -13,19 +13,19 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v3
 
-      - name: Deploy to Somee Hosting (FTP)
+      - name: Deploy to Somee (FTP)
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
-          server: ${{ secrets.SOMEE_FTP_SERVER }}
-          username: ${{ secrets.SOMEE_FTP_USERNAME }}
-          password: ${{ secrets.SOMEE_FTP_PASSWORD }}
-          # ==== Các tham số bạn yêu cầu ====
-          protocol: ftp            # ftp / ftps
-          port: 21                 # Somee dùng port 21
-          log-level: verbose       # minimal / standard / verbose
-          timeout: 180000          # 180000 ms = 3 minutes
-          # ================================
-          # Thư mục upload từ repo
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # Các tham số bạn yêu cầu
+          protocol: ftp              # Somee chỉ hỗ trợ FTP
+          port: 21
+          log-level: standard
+          timeout: 300000            # 5 minutes
+          # Upload tất cả từ repo
           local-dir: "./"
-          # Thư mục web public trên Somee
+          # Thư mục web đúng của bạn:
           server-dir: "/www.TestFile.somee.com/"
+          dangerous-clean-slate: false
