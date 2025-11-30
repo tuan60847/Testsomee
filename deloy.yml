@@ -24,7 +24,7 @@ jobs:
           protocol: ftps           # ftp / ftps
           port: 21                 # Somee dùng port 21
           log-level: standard      # minimal / standard / verbose
-          timeout: 300000          # 300000 ms = 5 minutes
+          timeout: 180000          # 180000 ms = 3 minutes
           # ================================
 
           # Thư mục upload từ repo
